@@ -6,6 +6,6 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 public class LambdaHandler implements RequestHandler<Integer, String>{
     public String handleRequest(Integer myCount, Context context) {
         System.out.println("I am a lambda and I have been invoked!");
-        return String.valueOf(myCount);
+        return "Buddy says your number is " + String.valueOf(myCount);
     }
 }

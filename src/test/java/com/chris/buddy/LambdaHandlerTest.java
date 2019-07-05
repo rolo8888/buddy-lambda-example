@@ -9,9 +9,9 @@ public class LambdaHandlerTest {
     public void runATest() {
         LambdaHandler handler = new LambdaHandler();
         String output = handler.handleRequest(10, null);
-        Assert.assertEquals("10", output);
+        Assert.assertEquals("Buddy says your number is 10", output);
 
         String secondOutput = handler.handleRequest(57, null);
-        Assert.assertEquals("57", secondOutput);
+        Assert.assertEquals("Buddy says your number is 57", secondOutput);
     }
 }

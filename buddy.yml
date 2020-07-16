@@ -2,6 +2,7 @@
   trigger_mode: "ON_EVERY_PUSH"
   ref_name: "master"
   ref_type: "BRANCH"
+  fetch_all_refs: true
   trigger_condition: "ALWAYS"
   actions:
   - action: "Execute: mvn clean install"
@@ -13,13 +14,7 @@
     - "mvn clean install"
     cached_dirs:
     - "/root/.m2/repository"
-    mount_filesystem_path: "/buddy/buddy-lambda-example-1"
+    volume_mappings:
+    - "/:/buddy/buddy-lambda-example-1"
+    trigger_condition: "ALWAYS"
     shell: "BASH"
-    trigger_condition: "ALWAYS"
-  - action: "Deploy function lambda"
-    type: "AWS_LAMBDA_DEPLOY"
-    local_path: "target/buddy.jar"
-    region: "us-east-1"
-    trigger_condition: "ALWAYS"
-    function_name: "lambda"
-    integration_hash: "5f1044f00ab78e1e753d637d"

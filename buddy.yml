@@ -16,7 +16,7 @@
     mount_filesystem_path: "/buddy/buddy-lambda-example-1"
     shell: "BASH"
     trigger_condition: "ALWAYS"
-      - action: "Deploy function lambda"
+  - action: "Deploy function lambda"
     type: "AWS_LAMBDA_DEPLOY"
     local_path: "target/buddy.jar"
     region: "us-east-1"
